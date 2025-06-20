@@ -1,54 +1,81 @@
-Handwritten Digit Recognition
-This project implements a machine learning model for recognizing handwritten digits using the MNIST dataset. The model takes grayscale images of digits (0–9) and predicts the correct numerical label using a trained neural network or classical machine learning algorithm.
+# Handwritten Digit Classifier with PyTorch
 
-Table of Contents
-Overview
-Features
-Tech Stack
-Getting Started
-Training & Evaluation
-Result
-Future Improvements
-License
+This project implements a simple yet effective feed-forward neural network using **PyTorch** to classify handwritten digits from the **MNIST dataset**. The model is trained, evaluated, and visualized using Google Colab or Jupyter Notebook.
 
-Overview
-The goal of this project is to classify images of handwritten digits using machine learning. It uses a well-known dataset of labeled digit images and applies classification techniques such as:
+---
 
-Logistic Regression
+## 📌 Features
 
-Support Vector Machines
+- Feed-forward neural network (784 → 128 → 64 → 10)
+- Trained on the classic MNIST dataset
+- Achieves over **97% accuracy** on the test set
+- Includes data visualization and class probability plots
+- Built using PyTorch and Torchvision
+- Ready-to-run in **Google Colab**
 
-Convolutional Neural Networks (CNNs)
+---
 
-Features
-Preprocessed and normalized digit image dataset (MNIST)
-Multiple ML algorithms to compare performance
-Accuracy evaluation using a confusion matrix and a classification report
-Visualizations of predictions and misclassified digits
-Train/test split for fair model evaluation
+## 📂 Project Structure
 
-Tech Stack
-Python 3.x
-NumPy
-pandas
-matplotlib & seaborn
-scikit-learn
-TensorFlow or PyTorch (optional, for deep learning)
+MNIST_Classifier.ipynb # Main notebook with full training + testing
 
-Getting Started
+Requirements.txt # Required packages (for local execution)
 
-1. Clone the repository
-Git clone https://github.com/yourusername/handwritten-digit-recognition.git
-cd handwritten-digit-recognition
+README.md # Project documentation
+---
 
-2. Install dependencies
+## 🚀 Getting Started
+
+### 1. Clone the Repository
+git clone https://github.com/yourusername/mnist-pytorch-classifier.git
+cd mnist-pytorch-classifier
+
+2. Install Dependencies (if running locally)
 pip install -r requirements.txt
+If you're using Google Colab, dependencies like torch, torchvision, and matplotlib are already installed.
 
-3. Run the notebook
-Open the Jupyter or Google Colab notebook and execute the cells step-by-step:
-Jupyter Notebook digit_recognition.ipynb
+📊 Model Architecture
+The network has the following architecture:
 
-Training & Evaluation
-Dataset: MNIST (60,000 training, 10,000 testing samples)
-Input: 28x28 grayscale images
-Output: Predicted class label (0–9)
+Arduino
+Input: 784 (28x28 flattened image)
+↓
+Linear (784 → 128) + ReLU
+↓
+Linear (128 → 64) + ReLU
+↓
+Linear (64 → 10) + LogSoftmax
+Loss Function: Negative Log-Likelihood (NLLLoss)
+
+Optimizer: Stochastic Gradient Descent (SGD) with Momentum
+
+🧪 Results
+Metric	Value
+Test Accuracy	~97.2%
+Epochs	15
+Batch Size	64
+Optimizer	SGD (lr=0.003, momentum=0.9)
+
+📈 Visualization Example
+The notebook includes visualization of:
+Sample MNIST images
+Class probabilities for predictions
+Misclassifications and confidence levels
+
+📌 Dataset
+Source: MNIST (Yann LeCun)
+60,000 training images and 10,000 test images
+Grayscale images of handwritten digits (0–9)
+
+📬 Contact
+For questions, suggestions, or collaborations, feel free to open an issue or reach out via the repository.
+
+📄 License
+This project is released under the MIT License.
+
+Let me know if you'd like:
+- A version adapted for CNN instead of feed-forward
+- A badge section (Python version, Colab badge, etc.)
+- Screenshots or diagrams included
+
+I'm happy to help further!
